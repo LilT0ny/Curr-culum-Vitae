@@ -75,6 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
       rootMargin: '0px 0px -50px 0px'
     });
     els.forEach(el => io.observe(el));
+  } else {
+    // Si el usuario prefiere reducir movimiento, mostrar elementos inmediatamente
+    document.querySelectorAll('.reveal').forEach(el => {
+      el.classList.add('visible');
+    });
   }
 
   // ===== Smooth scroll behavior =====

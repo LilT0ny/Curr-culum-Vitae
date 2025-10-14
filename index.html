@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content="CV de Anthony Javier Gómez Niño — Estudiante de Ingeniería en Software y desarrollador frontend en Quito, Ecuador." />
     <meta name="theme-color" content="#7c3aed" />
+    <meta name="msapplication-TileColor" content="#7c3aed" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="color-scheme" content="light dark" />
     
     <!-- Open Graph / Social Media -->
@@ -31,6 +33,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="animations.css" />
     
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -61,7 +64,7 @@
   <body>
     <div class="wrap">
       <!-- HEADER / HERO -->
-      <header class="card reveal" style="--delay: 0ms">
+      <header class="card reveal" data-delay="0">
         <div class="header-left">
           <img 
             class="avatar" 
@@ -111,10 +114,10 @@
       <!-- MAIN CONTENT -->
       <main class="grid">
         <!-- LEFT COLUMN: EXPERIENCE -->
-        <section class="card reveal" style="--delay: 100ms">
+        <section class="card reveal" data-delay="100">
           <h2>Experiencia</h2>
           <div class="items">
-            <article class="item reveal" style="--delay: 200ms">
+            <article class="item reveal" data-delay="200">
               <h3>Pasante Frontend — Oficina de Asuntos Académicos, Escuela Politécnica Nacional (EPN)</h3>
               <p class="meta">2025 – Presente · Quito, Ecuador</p>
               <ul>
@@ -125,7 +128,8 @@
               </ul>
             </article>
 
-            <article class="item reveal" style="--delay: 300ms">
+            <article class="item reveal" data-delay="300">
+              <h3>Web "Chauchera"</h3>
               <h3>Desarrollador de Software — Proyectos Universitarios (Escuela Politécnica Nacional)</h3>
               <p class="meta">Abr 2020 – Presente · Quito, Ecuador</p>
               <ul>
@@ -137,7 +141,7 @@
         </section>
 
         <!-- RIGHT COLUMN: PROFILE & SKILLS -->
-        <aside class="card reveal" style="--delay: 150ms">
+        <aside class="card reveal" data-delay="150">
           <!-- Profile Section -->
           <section>
             <h2>Perfil</h2>
@@ -182,10 +186,10 @@
         </aside>
 
         <!-- FULL-WIDTH: PROJECTS -->
-        <section class="card reveal" style="--delay: 200ms; grid-column: 1 / -1;">
+        <section class="card reveal" data-delay="200">
           <h2>Proyectos Destacados</h2>
           <div class="items">
-            <article class="item reveal" style="--delay: 250ms">
+            <article class="item reveal" data-delay="250">
               <h3>Sistema de Laboratorio Clínico</h3>
               <p class="meta">Interfaz para registro de pruebas y reporte de resultados</p>
               <ul>
@@ -194,7 +198,7 @@
               </ul>
             </article>
 
-            <article class="item reveal" style="--delay: 300ms">
+            <article class="item reveal delay-300">
               <h3>Web "Chauchera"</h3>
               <p class="meta">Rastreador de gastos personales ligero</p>
               <ul>
@@ -202,7 +206,7 @@
               </ul>
             </article>
 
-            <article class="item reveal" style="--delay: 350ms">
+            <article class="item reveal delay-350">
               <h3>Billetera de Criptomonedas (Prototipo Académico)</h3>
               <p class="meta">Interfaz de saldos y transacciones</p>
               <ul>
@@ -213,15 +217,15 @@
         </section>
 
         <!-- FULL-WIDTH: EDUCATION -->
-        <section class="card reveal" style="--delay: 250ms; grid-column: 1 / -1;">
+        <section class="card reveal" data-delay="250">
           <h2>Educación</h2>
           <div class="items">
-            <article class="item reveal" style="--delay: 300ms">
+            <article class="item reveal" data-delay="300">
               <h3>B.S. en Ingeniería en Software — Escuela Politécnica Nacional</h3>
               <p class="meta">2021 – Presente · Quito, Ecuador</p>
             </article>
 
-            <article class="item reveal" style="--delay: 350ms">
+            <article class="item reveal" data-delay="350">
               <h3>Diploma de Educación Media en Ciencias — Institución Educativa "Pomasqui"</h3>
               <p class="meta">2021</p>
             </article>
@@ -229,7 +233,7 @@
         </section>
 
         <!-- FULL-WIDTH: REFERENCES -->
-        <section class="card reveal" style="--delay: 300ms; grid-column: 1 / -1;">
+        <section class="card reveal" data-delay="300">
           <h2>Referencias</h2>
           <ul class="references-list">
             <li>
@@ -249,7 +253,7 @@
       </main>
 
       <!-- FOOTER -->
-      <footer class="reveal" style="--delay: 350ms">
+      <footer class="reveal" data-delay="350">
         <button class="btn" id="printBtn" aria-label="Imprimir o guardar como PDF">
           <span aria-hidden="true">🖨</span>
           Imprimir / Guardar como PDF
