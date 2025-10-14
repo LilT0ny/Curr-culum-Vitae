@@ -455,9 +455,10 @@ footer {
   outline-offset: 2px;
 }
 
-/* ===== PRINT (consolidado y optimizado) ===== */
+
+/* ===== PRINT (bloque único y optimizado) ===== */
 @media print {
-  /* Respeta colores en Android/iOS/Chrome */
+  /* Colores reales y base limpia */
   html, body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -465,44 +466,63 @@ footer {
     color: #000 !important;
   }
 
-  /* Layout de impresión en una columna, sin sombras ni efectos */
+  /* Layout de impresión en una sola columna */
   .grid { display: block !important; }
+
+  /* Quita sombras, bordes decorativos y fondos para un PDF limpio */
   .card, header, main, aside, section, footer {
     width: 100% !important;
     max-width: 100% !important;
-    box-shadow: none !important;
     background: transparent !important;
     border: none !important;
+    box-shadow: none !important;
   }
 
+  /* Cabecera no pegajosa */
   header {
     position: static !important;
     background: transparent !important;
     border: none !important;
-    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
     padding: 0 0 16px 0 !important;
     margin-bottom: 16px !important;
   }
 
-  /* Texto del nombre: sin degradado y relleno visible */
+  /* ---------- TITULAR (nombre) visible en PDF ---------- */
+  /* Fuerza relleno sólido (soluciona el degradado invisible) */
   .name {
     background: none !important;
     -webkit-background-clip: initial !important;
     background-clip: initial !important;
-    -webkit-text-fill-color: currentColor !important;
+    -webkit-text-fill-color: #000 !important; /* clave en Android/iOS */
+    -webkit-text-stroke: 0 !important;
     color: #000 !important;
     text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
     animation: none !important;
   }
 
-  /* Quita animaciones/transform que rompen el layout al imprimir */
+  /* (Opcional) Si usas una segunda línea sólo-impresión: 
+     Deja .name-print en HTML (duplicado del texto) y asígnale estilo aquí */
+  .name-print {
+    display: block !important;
+    margin: 0 0 6px 0 !important;
+    font-size: 32px !important;   /* ajusta si quieres */
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+    color: #000 !important;
+  }
+
+  /* Animaciones y transforms fuera (evita saltos en móvil) */
   .reveal {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
   }
 
-  /* Evita cortes feos entre bloques/títulos */
+  /* Evita cortes feos entre tarjetas y títulos */
   .card, section, article, header, h1, h2, h3 {
     break-inside: avoid;
     page-break-inside: avoid;
@@ -519,10 +539,12 @@ footer {
     justify-content: center !important;
   }
 
-  /* Oculta controles UI en el PDF */
-  .btn, .theme, #printBtn, #downloadPdfBtn { display: none !important; }
+  /* Oculta controles/UI en el PDF */
+  .btn, .theme, #printBtn, #downloadPdfBtn {
+    display: none !important;
+  }
 
-  /* Márgenes de página */
+  /* Márgenes de página (ajusta a tu gusto) */
   @page {
     margin: 12mm;
     size: auto;
@@ -531,6 +553,7 @@ footer {
   /* Fondo decorativo fuera del PDF */
   .wrap::before { display: none !important; }
 }
+
 
 /* ===== RESPONSIVE ADJUSTMENTS ===== */
 @media (max-width: 640px) {
