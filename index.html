@@ -13,22 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <script>
-    // Theme toggle (respects system by default)
-    function toggleTheme(){
-      const dark = document.documentElement.classList.toggle('dark');
-      document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
-    }
-    (function(){
-      const saved = localStorage.getItem('theme');
-      if(saved){
-        const dark = saved === 'dark';
-        document.documentElement.classList.toggle('dark', dark);
-        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
-      }
-    })();
-  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,12 +25,13 @@
     "address": {"@type":"PostalAddress","addressLocality":"Quito","addressCountry":"EC"}
   }
   </script>
+  <script src="main.js" defer></script>
 </head>
 <body>
   <div class="wrap">
     <header class="card reveal" style="--delay:0ms">
       <div class="header-left">
-        <img class="avatar" src="assets/profile.jpg" alt="Portrait of Anthony Javier Gómez Niño" loading="lazy" />
+        <img class="avatar" src="assets/profile.png" alt="Portrait of Anthony Javier Gómez Niño" loading="lazy" />
         <div class="top">
           <h1 class="name">Anthony Javier Gómez Niño</h1>
           <p class="title">Software Engineering Student · Frontend Developer</p>
@@ -59,7 +44,7 @@
           </div>
         </div>
       </div>
-      <button class="btn theme" onclick="toggleTheme()">Toggle theme</button>
+      <button class="btn theme" id="themeToggle">Toggle theme</button>
     </header>
 
     <main class="grid">
@@ -173,26 +158,9 @@
     </main>
 
     <footer class="reveal" style="--delay:350ms">
-      <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+      <button class="btn" id="printBtn">Print / Save as PDF</button>
       <a class="btn" href="https://github.com/LilT0ny" target="_blank" rel="noopener">More on GitHub</a>
     </footer>
   </div>
-
-  <script>
-    // IntersectionObserver to reveal elements on scroll
-    (function(){
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const els = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      els.forEach(el => io.observe(el));
-    })();
-  </script>
 </body>
 </html>
