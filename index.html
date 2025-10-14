@@ -4,10 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content="CV de Anthony Javier Gómez Niño — Estudiante de Ingeniería en Software y desarrollador frontend en Quito, Ecuador." />
-    <meta name="theme-color" content="#7c3aed" />
+    <meta name="theme-color" content="#7c3aed" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#4c1d95" media="(prefers-color-scheme: dark)">
+    <!-- Extra theme color meta tags for better browser compatibility -->
+    <meta name="msapplication-navbutton-color" content="#7c3aed">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <meta name="msapplication-TileColor" content="#7c3aed" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="color-scheme" content="light dark" />
+
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
@@ -24,6 +34,7 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%237c3aed' width='100' height='100'/><text x='50' y='65' font-size='70' font-weight='bold' fill='white' text-anchor='middle'>AJ</text></svg>" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/profile.png" />
     <link rel="canonical" href="https://anjagoni.com/" />
     
     <!-- Fonts -->
@@ -95,10 +106,15 @@
                 <span aria-hidden="true">💻</span>
                 GitHub
               </a>
-              <a href="#" id="downloadPdfBtn" aria-label="Descargar CV en PDF">
-                <span aria-hidden="true">📄</span>
-                PDF
-              </a>
+              <a href="#"
+   id="downloadPdfBtn"
+   class="btn"
+   role="button"
+   aria-label="Descargar CV en PDF">
+  <span aria-hidden="true">📄</span>
+  PDF
+</a>
+
             </nav>
           </div>
         </div>

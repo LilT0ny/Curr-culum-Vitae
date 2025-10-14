@@ -569,3 +569,14 @@ footer {
     box-shadow: var(--shadow);
   }
 }
+
+@media print {
+  #printBtn,
+  #downloadPdfBtn,
+  .btn.theme { display: none !important; }
+
+  /* Si usas headers pegajosos o sombras que estorban al imprimir */
+  header { position: static !important; box-shadow: none !important; }
+
+  @page { margin: 12mm; }
+}

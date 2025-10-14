@@ -15,7 +15,9 @@ function applyTheme(isDark) {
   document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
   updateThemeIcon(isDark);
+  applyThemeColorMeta(); // <-- ¡nuevo!
 }
+
 
 function updateThemeIcon(isDark) {
   const btn = document.getElementById('themeToggle');
@@ -35,7 +37,9 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
   if (!localStorage.getItem('theme')) {
     applyTheme(e.matches);
   }
+  applyThemeColorMeta(); // <-- asegura sincronización si cambia el SO
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // ===== Theme button with smooth transition =====
@@ -51,6 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Print button with feedback =====
+
+  // ===== PDF link behaves like print button =====
+const pdfLink = document.getElementById('downloadPdfBtn');
+if (pdfLink) {
+  pdfLink.addEventListener('click', (e) => {
+    e.preventDefault();            // evita saltar a "#"
+    pdfLink.classList.add('active'); // feedback visual, igual que el botón
+    window.print();                // abre el diálogo de imprimir/guardar PDF
+    setTimeout(() => pdfLink.classList.remove('active'), 300);
+  });
+}
+
   const printBtn = document.getElementById('printBtn');
   if (printBtn) {
     printBtn.addEventListener('click', () => {
@@ -121,4 +137,28 @@ document.addEventListener('DOMContentLoaded', () => {
       lastScrollTop = scrollTop;
     }, { passive: true });
   }
+
+  applyThemeColorMeta();
 });
+
+// Sincroniza <meta name="theme-color"> con el tema actual
+function applyThemeColorMeta() {
+  // Elige los dos meta[name="theme-color"] que pusiste en index.html
+  const metas = [...document.querySelectorAll('meta[name="theme-color"]')];
+  if (!metas.length) return;
+
+  // Encuentra cuál meta coincide con el media actual (o toma la primera)
+  const active = metas.find(m => {
+    const mq = m.getAttribute('media');
+    return !mq || window.matchMedia(mq).matches;
+  }) || metas[0];
+
+  // Decide el color deseado según tu propio estado de tema
+  const isDark = document.documentElement.classList.contains('dark');
+  // Puedes reutilizar tus propios colores aquí:
+  const light = '#7c3aed';
+  const dark  = '#4c1d95';
+
+  // Actualiza el contenido del meta activo
+  active.setAttribute('content', isDark ? dark : light);
+}
