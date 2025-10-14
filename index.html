@@ -1,166 +1,273 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anthony Javier Gómez Niño — CV</title>
-  <meta name="description" content="Resume / CV of Anthony Javier Gómez Niño — Software Engineering student and frontend developer in Quito, Ecuador." />
-  <meta property="og:title" content="Anthony Javier Gómez Niño — CV" />
-  <meta property="og:description" content="Frontend-focused Software Engineering student. Projects, experience, skills, and contact." />
-  <meta property="og:type" content="website" />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anthony Javier Gómez Niño",
-    "jobTitle": "Software Engineering Student / Frontend Developer",
-    "email": "mailto:anjagoni@gmail.com",
-    "url": "https://github.com/LilT0ny",
-    "sameAs": ["https://www.linkedin.com/in/anjagoni","https://github.com/LilT0ny"],
-    "address": {"@type":"PostalAddress","addressLocality":"Quito","addressCountry":"EC"}
-  }
-  </script>
-  <script src="main.js" defer></script>
-</head>
-<body>
-  <div class="wrap">
-    <header class="card reveal" style="--delay:0ms">
-      <div class="header-left">
-        <img class="avatar" src="assets/profile.png" alt="Portrait of Anthony Javier Gómez Niño" loading="lazy" />
-        <div class="top">
-          <h1 class="name">Anthony Javier Gómez Niño</h1>
-          <p class="title">Software Engineering Student · Frontend Developer</p>
-          <div class="links">
-            <a href="mailto:anjagoni@gmail.com">anjagoni@gmail.com</a>
-            <a href="tel:+593978733414">+593 978733414</a>
-            <a href="https://www.linkedin.com/in/anjagoni" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="https://github.com/LilT0ny" target="_blank" rel="noopener">GitHub</a>
-            <a href="#" onclick="window.print();return false;">Download PDF</a>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="CV de Anthony Javier Gómez Niño — Estudiante de Ingeniería en Software y desarrollador frontend en Quito, Ecuador." />
+    <meta name="theme-color" content="#7c3aed" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://anjagoni.com/" />
+    <meta property="og:title" content="Anthony Javier Gómez Niño — CV" />
+    <meta property="og:description" content="Estudiante de Ingeniería en Software enfocado en desarrollo frontend. Proyectos, experiencia, habilidades y contacto." />
+    <meta property="og:image" content="https://anjagoni.com/assets/profile.png" />
+    <meta property="og:image:alt" content="Foto de perfil de Anthony Javier Gómez Niño" />
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Anthony Javier Gómez Niño — CV" />
+    <meta property="twitter:description" content="Frontend Developer & Software Engineering Student" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%237c3aed' width='100' height='100'/><text x='50' y='65' font-size='70' font-weight='bold' fill='white' text-anchor='middle'>AJ</text></svg>" />
+    <link rel="canonical" href="https://anjagoni.com/" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anthony Javier Gómez Niño",
+      "jobTitle": "Estudiante de Ingeniería en Software / Desarrollador Frontend",
+      "email": "mailto:anjagoni@gmail.com",
+      "telephone": "+593978733414",
+      "url": "https://anjagoni.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/anjagoni",
+        "https://github.com/LilT0ny"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Quito",
+        "addressCountry": "EC"
+      },
+      "image": "https://anjagoni.com/assets/profile.png"
+    }
+    </script>
+    
+    <title>Anthony Javier Gómez Niño — CV</title>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <!-- HEADER / HERO -->
+      <header class="card reveal" style="--delay: 0ms">
+        <div class="header-left">
+          <img 
+            class="avatar" 
+            src="assets/profile.png" 
+            alt="Foto de perfil de Anthony Javier Gómez Niño" 
+            loading="lazy"
+            width="96"
+            height="96"
+          />
+          <div class="top">
+            <h1 class="name">Anthony Javier Gómez Niño</h1>
+            <p class="title">Estudiante de Ingeniería en Software · Desarrollador Frontend</p>
+            
+            <nav class="links" aria-label="Enlaces de contacto">
+              <a href="mailto:anjagoni@gmail.com" aria-label="Enviar correo electrónico">
+                <span aria-hidden="true">✉</span>
+                anjagoni@gmail.com
+              </a>
+              <a href="tel:+593978733414" aria-label="Llamar por teléfono">
+                <span aria-hidden="true">📱</span>
+                +593 978 733414
+              </a>
+              <a href="https://www.linkedin.com/in/anjagoni" target="_blank" rel="noopener noreferrer" aria-label="Perfil de LinkedIn">
+                <span aria-hidden="true">💼</span>
+                LinkedIn
+              </a>
+              <a href="https://github.com/LilT0ny" target="_blank" rel="noopener noreferrer" aria-label="Perfil de GitHub">
+                <span aria-hidden="true">💻</span>
+                GitHub
+              </a>
+              <a href="#" id="downloadPdfBtn" aria-label="Descargar CV en PDF">
+                <span aria-hidden="true">📄</span>
+                PDF
+              </a>
+            </nav>
           </div>
         </div>
-      </div>
-      <button class="btn theme" id="themeToggle">Toggle theme</button>
-    </header>
+        
+        <button 
+          class="btn theme" 
+          id="themeToggle" 
+          aria-label="Cambiar tema"
+          aria-pressed="false"
+        ></button>
+      </header>
 
-    <main class="grid">
-      <!-- LEFT COLUMN -->
-      <section class="card reveal" style="--delay:100ms">
-        <h2>Experience</h2>
-        <div class="items">
-          <article class="item reveal" style="--delay:200ms">
-            <h3>Frontend Intern — Office of Academic Affairs, National Polytechnic School (EPN)</h3>
-            <p class="meta">2025 – Present · Quito, Ecuador</p>
-            <ul>
-              <li>Built Angular components (templates, styles, responsive layouts) aligned with the institutional design system.</li>
-              <li>Customized WordPress child themes; created pages/landing pages; improved CSS/HTML performance basics.</li>
-              <li>Translated Figma wireframes into accessible UI (semantics, contrast, hierarchy).</li>
-              <li>Documented acceptance criteria; version control with Git/GitHub.</li>
-            </ul>
-          </article>
+      <!-- MAIN CONTENT -->
+      <main class="grid">
+        <!-- LEFT COLUMN: EXPERIENCE -->
+        <section class="card reveal" style="--delay: 100ms">
+          <h2>Experiencia</h2>
+          <div class="items">
+            <article class="item reveal" style="--delay: 200ms">
+              <h3>Pasante Frontend — Oficina de Asuntos Académicos, Escuela Politécnica Nacional (EPN)</h3>
+              <p class="meta">2025 – Presente · Quito, Ecuador</p>
+              <ul>
+                <li>Desarrollé componentes Angular (templates, estilos, layouts responsivos) alineados con el sistema de diseño institucional.</li>
+                <li>Personalicé temas secundarios de WordPress; creé páginas y landing pages; mejoré bases de CSS/HTML.</li>
+                <li>Traduje wireframes de Figma a interfaces accesibles (semántica, contraste, jerarquía).</li>
+                <li>Documenté criterios de aceptación; control de versiones con Git/GitHub.</li>
+              </ul>
+            </article>
 
-          <article class="item reveal" style="--delay:300ms">
-            <h3>Software Developer — University Projects (Escuela Politécnica Nacional)</h3>
-            <p class="meta">Apr 2020 – Present · Quito, Ecuador</p>
-            <ul>
-              <li>Led multiple student teams to deliver academic software projects; several are available on GitHub.</li>
-              <li>Built a clinical laboratory system prototype (requirements, UI design, validations, handoff).</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+            <article class="item reveal" style="--delay: 300ms">
+              <h3>Desarrollador de Software — Proyectos Universitarios (Escuela Politécnica Nacional)</h3>
+              <p class="meta">Abr 2020 – Presente · Quito, Ecuador</p>
+              <ul>
+                <li>Lideré múltiples equipos estudiantiles para entregar proyectos académicos; varios disponibles en GitHub.</li>
+                <li>Construí un prototipo de sistema de laboratorio clínico (requisitos, diseño UI, validaciones, entrega).</li>
+              </ul>
+            </article>
+          </div>
+        </section>
 
-      <!-- RIGHT COLUMN -->
-      <aside class="card reveal" style="--delay:150ms">
-        <h2>Profile</h2>
-        <p>Student of Software Engineering focused on building clean, accessible, and responsive interfaces. I convert requirements into user-centered experiences, validating early with stakeholders and iterating quickly.</p>
-        <h2>Skills</h2>
-        <div class="chips">
-          <span class="chip">Angular</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">HTML5</span>
-          <span class="chip">CSS3</span>
-          <span class="chip">Responsive Design</span>
-          <span class="chip">Accessibility (A11y)</span>
-          <span class="chip">WordPress</span>
-          <span class="chip">Figma</span>
-          <span class="chip">Git/GitHub</span>
-          <span class="chip">Requirements</span>
-          <span class="chip">OOP</span>
-          <span class="chip">Python</span>
-          <span class="chip">Java</span>
-          <span class="chip">C#</span>
-          <span class="chip">C++</span>
-          <span class="chip">SQL</span>
-        </div>
-        <h2>Certifications</h2>
-        <p><strong>Introduction to Data Analytics with Python</strong> — Alison (2023)</p>
-        <h2>Languages</h2>
-        <p>Spanish (Native) · English (Intermediate)</p>
-      </aside>
+        <!-- RIGHT COLUMN: PROFILE & SKILLS -->
+        <aside class="card reveal" style="--delay: 150ms">
+          <!-- Profile Section -->
+          <section>
+            <h2>Perfil</h2>
+            <p>Estudiante de Ingeniería en Software enfocado en construir interfaces limpias, accesibles y responsivas. Convierto requisitos en experiencias centradas en el usuario, validando temprano con stakeholders e iterando rápidamente.</p>
+          </section>
 
-      <!-- FULL-WIDTH BELOW -->
-      <section class="card reveal" style="--delay:200ms; grid-column: 1 / -1;">
-        <h2>Selected Projects</h2>
-        <div class="items">
-          <article class="item reveal" style="--delay:250ms">
-            <h3>Clinical Laboratory System</h3>
-            <p class="meta">UI for test registration & results reporting</p>
-            <ul>
-              <li>Accessible forms with validations and clear information hierarchy.</li>
-              <li>Focus on usability for data entry and reporting views.</li>
-            </ul>
-          </article>
-          <article class="item reveal" style="--delay:300ms">
-            <h3>Web “Chauchera”</h3>
-            <p class="meta">Lightweight personal expense tracker</p>
-            <ul>
-              <li>Clean interface for quick balance and category views.</li>
-            </ul>
-          </article>
-          <article class="item reveal" style="--delay:350ms">
-            <h3>Cryptocurrency Wallet (Academic Prototype)</h3>
-            <p class="meta">Balances and transactions UI</p>
-            <ul>
-              <li>Simple, readable dashboard with status states and empty views.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+          <!-- Skills Section -->
+          <section>
+            <h2>Habilidades</h2>
+            <div class="chips" role="list">
+              <span class="chip" role="listitem">Angular</span>
+              <span class="chip" role="listitem">TypeScript</span>
+              <span class="chip" role="listitem">JavaScript</span>
+              <span class="chip" role="listitem">HTML5</span>
+              <span class="chip" role="listitem">CSS3</span>
+              <span class="chip" role="listitem">Responsive Design</span>
+              <span class="chip" role="listitem">Accesibilidad (A11y)</span>
+              <span class="chip" role="listitem">WordPress</span>
+              <span class="chip" role="listitem">Figma</span>
+              <span class="chip" role="listitem">Git/GitHub</span>
+              <span class="chip" role="listitem">Requisitos</span>
+              <span class="chip" role="listitem">OOP</span>
+              <span class="chip" role="listitem">Python</span>
+              <span class="chip" role="listitem">Java</span>
+              <span class="chip" role="listitem">C#</span>
+              <span class="chip" role="listitem">C++</span>
+              <span class="chip" role="listitem">SQL</span>
+            </div>
+          </section>
 
-      <section class="card reveal" style="--delay:250ms; grid-column: 1 / -1;">
-        <h2>Education</h2>
-        <div class="items">
-          <article class="item reveal" style="--delay:300ms">
-            <h3>B.S. in Software Engineering — Escuela Politécnica Nacional</h3>
-            <p class="meta">2021 – Present · Quito, Ecuador</p>
-          </article>
-          <article class="item reveal" style="--delay:350ms">
-            <h3>High School Diploma in Science — Institución Educativa “Pomasqui”</h3>
-            <p class="meta">2021</p>
-          </article>
-        </div>
-      </section>
+          <!-- Certifications Section -->
+          <section>
+            <h2>Certificaciones</h2>
+            <p><strong>Introducción al Análisis de Datos con Python</strong> — Alison (2023)</p>
+          </section>
 
-      <section class="card reveal" style="--delay:300ms; grid-column: 1 / -1;">
-        <h2>References</h2>
-        <ul>
-          <li><strong>Víctor Martinez</strong> — CTO, Kushki · <a href="tel:+12365159752">+1 (236) 515-9752</a></li>
-          <li><strong>Isaac Friedman</strong> — Software Engineering Student · <a href="tel:+593962601364">+593 96 260 1364</a></li>
-          <li><strong>Alexis Lapo</strong> — Software Engineering Student · <a href="tel:+593992506061">+593 99 250 6061</a></li>
-        </ul>
-      </section>
-    </main>
+          <!-- Languages Section -->
+          <section>
+            <h2>Idiomas</h2>
+            <p>Español (Nativo) · Inglés (Intermedio)</p>
+          </section>
+        </aside>
 
-    <footer class="reveal" style="--delay:350ms">
-      <button class="btn" id="printBtn">Print / Save as PDF</button>
-      <a class="btn" href="https://github.com/LilT0ny" target="_blank" rel="noopener">More on GitHub</a>
-    </footer>
-  </div>
-</body>
+        <!-- FULL-WIDTH: PROJECTS -->
+        <section class="card reveal" style="--delay: 200ms; grid-column: 1 / -1;">
+          <h2>Proyectos Destacados</h2>
+          <div class="items">
+            <article class="item reveal" style="--delay: 250ms">
+              <h3>Sistema de Laboratorio Clínico</h3>
+              <p class="meta">Interfaz para registro de pruebas y reporte de resultados</p>
+              <ul>
+                <li>Formularios accesibles con validaciones y jerarquía clara de información.</li>
+                <li>Enfoque en usabilidad para vistas de entrada de datos y reporte.</li>
+              </ul>
+            </article>
+
+            <article class="item reveal" style="--delay: 300ms">
+              <h3>Web "Chauchera"</h3>
+              <p class="meta">Rastreador de gastos personales ligero</p>
+              <ul>
+                <li>Interfaz limpia para vistas rápidas de saldo y categorías.</li>
+              </ul>
+            </article>
+
+            <article class="item reveal" style="--delay: 350ms">
+              <h3>Billetera de Criptomonedas (Prototipo Académico)</h3>
+              <p class="meta">Interfaz de saldos y transacciones</p>
+              <ul>
+                <li>Panel simple y legible con estados de estado y vistas vacías.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- FULL-WIDTH: EDUCATION -->
+        <section class="card reveal" style="--delay: 250ms; grid-column: 1 / -1;">
+          <h2>Educación</h2>
+          <div class="items">
+            <article class="item reveal" style="--delay: 300ms">
+              <h3>B.S. en Ingeniería en Software — Escuela Politécnica Nacional</h3>
+              <p class="meta">2021 – Presente · Quito, Ecuador</p>
+            </article>
+
+            <article class="item reveal" style="--delay: 350ms">
+              <h3>Diploma de Educación Media en Ciencias — Institución Educativa "Pomasqui"</h3>
+              <p class="meta">2021</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- FULL-WIDTH: REFERENCES -->
+        <section class="card reveal" style="--delay: 300ms; grid-column: 1 / -1;">
+          <h2>Referencias</h2>
+          <ul class="references-list">
+            <li>
+              <strong>Víctor Martinez</strong> — CTO, Kushki
+              <a href="tel:+12365159752" aria-label="Llamar a Víctor Martinez">+1 (236) 515-9752</a>
+            </li>
+            <li>
+              <strong>Isaac Friedman</strong> — Estudiante de Ingeniería en Software
+              <a href="tel:+593962601364" aria-label="Llamar a Isaac Friedman">+593 96 260 1364</a>
+            </li>
+            <li>
+              <strong>Alexis Lapo</strong> — Estudiante de Ingeniería en Software
+              <a href="tel:+593992506061" aria-label="Llamar a Alexis Lapo">+593 99 250 6061</a>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="reveal" style="--delay: 350ms">
+        <button class="btn" id="printBtn" aria-label="Imprimir o guardar como PDF">
+          <span aria-hidden="true">🖨</span>
+          Imprimir / Guardar como PDF
+        </button>
+        <a 
+          class="btn" 
+          href="https://github.com/LilT0ny" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="Ver más proyectos en GitHub"
+        >
+          <span aria-hidden="true">🔗</span>
+          Más en GitHub
+        </a>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
+  </body>
 </html>
