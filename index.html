@@ -20,7 +20,6 @@
       content="#4c1d95"
       media="(prefers-color-scheme: dark)"
     />
-    <!-- Extra theme color meta tags for better browser compatibility -->
     <meta name="msapplication-navbutton-color" content="#7c3aed" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
@@ -41,7 +40,6 @@
       content="black-translucent"
     />
 
-    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://anjagoni.com/" />
     <meta property="og:title" content="Anthony Javier Gómez Niño — CV" />
@@ -58,7 +56,6 @@
       content="Foto de perfil de Anthony Javier Gómez Niño"
     />
 
-    <!-- Twitter Card -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:title" content="Anthony Javier Gómez Niño — CV" />
     <meta
@@ -66,7 +63,6 @@
       content="Frontend Developer & Software Engineering Student"
     />
 
-    <!-- Favicon -->
     <link
       rel="icon"
       type="image/svg+xml"
@@ -75,19 +71,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/profile.png" />
     <link rel="canonical" href="https://anjagoni.com/" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="animations.css" />
 
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -115,7 +108,6 @@
 
   <body>
     <div class="wrap">
-      <!-- HEADER / HERO -->
       <header class="card reveal" data-delay="0">
         <div class="header-left">
           <img
@@ -137,11 +129,11 @@
                 href="mailto:anjagoni@gmail.com"
                 aria-label="Enviar correo electrónico"
               >
-                <span aria-hidden="true">✉</span>
+                <i data-feather="mail"></i>
                 anjagoni@gmail.com
               </a>
               <a href="tel:+593978733414" aria-label="Llamar por teléfono">
-                <span aria-hidden="true">📱</span>
+                <i data-feather="phone"></i>
                 +593 978 733414
               </a>
               <a
@@ -150,7 +142,7 @@
                 rel="noopener noreferrer"
                 aria-label="Perfil de LinkedIn"
               >
-                <span aria-hidden="true">💼</span>
+                <i data-feather="linkedin"></i>
                 LinkedIn
               </a>
               <a
@@ -159,7 +151,7 @@
                 rel="noopener noreferrer"
                 aria-label="Perfil de GitHub"
               >
-                <span aria-hidden="true">💻</span>
+                <i data-feather="github"></i>
                 GitHub
               </a>
               <a
@@ -169,7 +161,7 @@
                 role="button"
                 aria-label="Descargar CV en PDF"
               >
-                <span aria-hidden="true">📄</span>
+                <i data-feather="file-text"></i>
                 PDF
               </a>
             </nav>
@@ -184,9 +176,7 @@
         ></button>
       </header>
 
-      <!-- MAIN CONTENT -->
       <main class="grid">
-        <!-- LEFT COLUMN: EXPERIENCE -->
         <section class="card reveal" data-delay="100">
           <h2>Experiencia</h2>
           <div class="items">
@@ -217,7 +207,6 @@
             </article>
 
             <article class="item reveal" data-delay="300">
-              <h3>Web "Chauchera"</h3>
               <h3>
                 Desarrollador de Software — Proyectos Universitarios (Escuela
                 Politécnica Nacional)
@@ -225,21 +214,16 @@
               <p class="meta">Abr 2020 – Presente · Quito, Ecuador</p>
               <ul>
                 <li>
-                  Lideré múltiples equipos estudiantiles para entregar proyectos
-                  académicos; varios disponibles en GitHub.
+                  Lideré múltiples equipos estudiantiles para entregar
+                  proyectos académicos, resultando en los prototipos listados
+                  en la sección "Proyectos Destacados".
                 </li>
-                <li>
-                  Construí un prototipo de sistema de laboratorio clínico
-                  (requisitos, diseño UI, validaciones, entrega).
-                </li>
-              </ul>
+                </ul>
             </article>
-          </div>
+            </div>
         </section>
 
-        <!-- RIGHT COLUMN: PROFILE & SKILLS -->
         <aside class="card reveal" data-delay="150">
-          <!-- Profile Section -->
           <section>
             <h2>Perfil</h2>
             <p>
@@ -250,7 +234,6 @@
             </p>
           </section>
 
-          <!-- Skills Section -->
           <section>
             <h2>Habilidades</h2>
             <div class="chips" role="list">
@@ -274,7 +257,6 @@
             </div>
           </section>
 
-          <!-- Certifications Section -->
           <section>
             <h2>Certificaciones</h2>
             <p>
@@ -283,14 +265,12 @@
             </p>
           </section>
 
-          <!-- Languages Section -->
           <section>
             <h2>Idiomas</h2>
             <p>Español (Nativo) · Inglés (Intermedio)</p>
           </section>
         </aside>
 
-        <!-- FULL-WIDTH: PROJECTS -->
         <section class="card reveal" data-delay="200">
           <h2>Proyectos Destacados</h2>
           <div class="items">
@@ -333,7 +313,6 @@
           </div>
         </section>
 
-        <!-- FULL-WIDTH: EDUCATION -->
         <section class="card reveal" data-delay="250">
           <h2>Educación</h2>
           <div class="items">
@@ -354,7 +333,6 @@
           </div>
         </section>
 
-        <!-- FULL-WIDTH: REFERENCES -->
         <section class="card reveal" data-delay="300">
           <h2>Referencias</h2>
           <ul class="references-list">
@@ -381,7 +359,6 @@
         </section>
       </main>
 
-      <!-- FOOTER -->
       <footer class="reveal" data-delay="350">
         <button
           class="btn"
@@ -404,7 +381,11 @@
       </footer>
     </div>
 
-    <!-- Scripts -->
     <script src="main.js" defer></script>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script> 
   </body>
 </html>

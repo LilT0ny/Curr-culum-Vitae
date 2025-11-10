@@ -1,37 +1,42 @@
-/* ===== VARIABLES & TEMAS ===== */
+/* ===== VARIABLES & TEMAS (MODIFICADO) ===== */
 :root {
-  --bg: #0b1020;
-  --text: #eaf0ff;
-  --muted: #a6b0cf;
-  --card: #0f1736;
-  --line: #1d2a57;
-  --accent-1: #7c3aed;
-  --accent-2: #2563eb;
-  --accent-3: #06b6d4;
-  --accent-2-light: #4c8fff;
-  --chip-bg: #111b3d;
-  --chip-text: #c7d2fe;
+  /* Paleta de colores "Limpia / Corporativa" (Default: Light) */
+  --bg: #F8F9FA;
+  --text: #212529;
+  --muted: #6C757D;
+  --card: #FFFFFF;
+  --line: #E0E0E0;
+  --primary: #0A2540;   /* Azul profundo para títulos */
+  --accent-1: #007BFF;   /* Acento principal */
+  --accent-2-light: #0069D9;
+  --chip-bg: #E9ECEF;
+  --chip-text: #495057;
 
-  --radius: 16px;
-  --gap: 1rem;
-  --shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 12px; /* Un radio más sutil */
+  --gap: 1.5rem; /* Más espacio en blanco */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f7f8fb;
-    --text: #0b1020;
-    --muted: #59607a;
-    --card: #ffffff;
-    --line: #e6e8ef;
-    --chip-bg: #eef2ff;
-    --chip-text: #3730a3;
-    --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
-  }
+/* Modo oscuro (Opcional, pero mantenemos tu lógica) */
+.dark,
+:root.dark {
+  --bg: #121212;
+  --text: #E0E0E0;
+  --muted: #999999;
+  --card: #1E1E1E;
+  --line: #333333;
+  --primary: #FFFFFF;
+  --accent-1: #007BFF;
+  --accent-2-light: #0069D9;
+  --chip-bg: #2C2C2C;
+  --chip-text: #CCCCCC;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ===== RESET & BASE ===== */
+/* ===== RESET & BASE (MODIFICADO) ===== */
 * { box-sizing: border-box; }
 
 html, body {
@@ -41,176 +46,163 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(124, 58, 237, 0.12), transparent 40%),
-    radial-gradient(900px 500px at 120% 10%, rgba(37, 99, 235, 0.12), transparent 40%),
-    var(--bg);
+  /* Fuente MODIFICADA: Lato para el cuerpo */
+  font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.6; /* Altura de línea recomendada */
+  font-size: 17px; /* Tamaño de fuente base */
   transition: background-color var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ===== CONTAINER ===== */
 .wrap {
   max-width: 1040px;
   margin: 0 auto;
-  padding: clamp(16px, 5vw, 28px);
+  padding: clamp(24px, 5vw, 40px); /* Más padding (espacio en blanco) */
   position: relative;
 }
 
-.wrap::before {
-  content: '';
-  position: fixed;
-  inset: -80px -80px auto auto;
-  height: 220px;
-  width: 220px;
-  background: conic-gradient(from 180deg at 50% 50%, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
-  filter: blur(52px);
-  opacity: 0.16;
-  pointer-events: none;
-  z-index: -1;
-}
+/* Fondo decorativo eliminado para un look más limpio */
+.wrap::before { display: none; }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (MODIFICADO) ===== */
 header {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: var(--gap);
   align-items: center;
-  margin-bottom: clamp(16px, 3vw, 24px);
+  margin-bottom: var(--gap);
   position: sticky;
   top: 0;
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--bg), transparent 0%),
-    color-mix(in oklab, var(--bg), transparent 20%)
-  );
-  padding: clamp(12px, 2vw, 16px) var(--gap);
+  background: var(--bg); /* Fondo sólido */
+  padding: 1rem 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(29, 42, 87, 0.5);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent; /* Oculto hasta scroll */
   transition: var(--transition);
 }
 
+/* Header simplificado, sin blur */
 header.scrolled {
+  background: var(--card); /* Fondo sólido al hacer scroll */
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow);
-  padding: clamp(8px, 1.5vw, 12px) var(--gap);
 }
 
 .header-left {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: clamp(12px, 3vw, 18px);
+  gap: clamp(16px, 3vw, 24px);
   align-items: center;
   min-width: 0;
 }
 
-/* ===== AVATAR ===== */
+/* ===== AVATAR (MODIFICADO) ===== */
 .avatar {
-  width: clamp(72px, 12vw, 96px);
-  height: clamp(72px, 12vw, 96px);
+  width: clamp(80px, 12vw, 96px);
+  height: clamp(80px, 12vw, 96px);
   border-radius: 50%;
   object-fit: cover;
-  background: #1c274f;
   flex-shrink: 0;
-  border: 2px solid transparent;
-  background-image:
-    linear-gradient(var(--card), var(--card)),
-    conic-gradient(var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  animation: avatarFloat 3s ease-in-out infinite;
-}
-
-@keyframes avatarFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  /* Borde simple y limpio */
+  border: 3px solid var(--accent-1);
+  background: var(--card);
+  padding: 3px;
+  /* Animación de flotar eliminada */
 }
 
 .top { display: grid; gap: 0.5rem; min-width: 0; }
 
-/* ===== TYPOGRAPHY ===== */
+/* ===== TYPOGRAPHY (MODIFICADO) ===== */
 .name {
-  font-size: clamp(24px, 5vw, 40px);
+  /* Fuente MODIFICADA: Montserrat para títulos */
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
   line-height: 1.15;
   margin: 0;
-  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 8s ease infinite;
-}
-
-@keyframes gradientShift {
-  0%, 100% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(20deg); }
+  font-weight: 700;
+  /* Color sólido, sin gradiente */
+  color: var(--primary);
+  /* Animación de gradiente eliminada */
 }
 
 .title {
   color: var(--muted);
   margin: 0;
   font-weight: 500;
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: clamp(16px, 2vw, 18px);
 }
 
-/* ===== LINKS / CHIPS ===== */
+/* ===== LINKS (MODIFICADO) ===== */
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(6px, 1.5vw, 8px);
+  gap: 8px;
   min-width: 0;
 }
 
 .links a {
-  position: relative;
   text-decoration: none;
-  color: var(--text);
+  color: var(--muted); /* Color más sutil */
   border: 1px solid var(--line);
-  background: color-mix(in oklab, var(--card), transparent 0%);
-  padding: clamp(7px, 1.5vw, 9px) clamp(10px, 2vw, 12px);
-  border-radius: 999px;
-  font-size: clamp(12px, 1.8vw, 14px);
+  background: var(--card);
+  padding: 8px 14px;
+  border-radius: 8px; /* Radio más estándar */
+  font-size: 14px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   white-space: nowrap;
   transition: var(--transition);
+  font-weight: 700;
 }
 
-.links a::after {
-  content: '';
-  position: absolute;
-  left: 12px; right: 12px; bottom: 7px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent-3));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.6;
-}
-
+/* Efecto hover sutil */
 .links a:hover,
 .links a:focus {
+  color: var(--primary);
+  border-color: var(--accent-1);
+  background: var(--bg);
   transform: translateY(-2px);
-  border-color: var(--accent-2-light);
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+  box-shadow: var(--shadow);
 }
 
-.links a:hover::after,
-.links a:focus::after { transform: scaleX(1); }
+/* Botón PDF ahora es un botón de acento */
+.links a#downloadPdfBtn {
+  background: var(--accent-1);
+  border-color: var(--accent-1);
+  color: #FFFFFF;
+}
+.links a#downloadPdfBtn:hover {
+  background: var(--accent-2-light);
+  border-color: var(--accent-2-light);
+  color: #FFFFFF;
+}
 
-/* ===== THEME BUTTON ===== */
+/* Línea sutil bajo el enlace (eliminada por un hover más limpio) */
+.links a::after { display: none; }
+
+
+/* ===== THEME BUTTON (MODIFICADO) ===== */
 .btn.theme {
-  width: clamp(40px, 8vw, 48px);
-  height: clamp(40px, 8vw, 48px);
+  width: 44px;
+  height: 44px;
   padding: 0;
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
   font-size: 20px;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+}
+.btn.theme:hover {
+  border-color: var(--accent-1);
+  color: var(--accent-1);
 }
 
 .btn.theme::before {
@@ -226,7 +218,7 @@ header.scrolled {
   transform: rotate(180deg) scale(1);
 }
 
-/* ===== GRID ===== */
+/* ===== GRID (Sin cambios, ya era perfecto) ===== */
 .grid { display: grid; gap: var(--gap); }
 
 .grid > .card:nth-child(n+3) { grid-column: 1 / -1; }
@@ -239,193 +231,187 @@ header.scrolled {
   .grid { grid-template-columns: 1.2fr 0.8fr; }
 }
 
-/* ===== CARDS ===== */
+/* ===== CARDS (MODIFICADO) ===== */
 .card {
-  background:
-    linear-gradient(180deg,
-      color-mix(in oklab, var(--card), transparent 0%),
-      color-mix(in oklab, var(--card), transparent 0%)
-    ) padding-box,
-    linear-gradient(120deg,
-      rgba(124, 58, 237, 0.6),
-      rgba(37, 99, 235, 0.6),
-      rgba(6, 182, 212, 0.6)
-    ) border-box;
-  border: 1px solid transparent;
+  /* Estilo de tarjeta limpio: sin gradientes */
+  background: var(--card);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: clamp(16px, 3vw, 20px);
+  padding: clamp(20px, 3vw, 28px); /* Más padding */
   box-shadow: var(--shadow);
   transition: var(--transition);
 }
 
+/* Efecto hover sutil (principio 6) */
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.45);
-  filter: saturate(1.08);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }
 
 @media (max-width: 767px) {
-  .card { padding: clamp(14px, 2.5vw, 18px); }
+  .card { padding: 20px; }
 }
 
-/* ===== HEADINGS ===== */
+/* ===== HEADINGS (MODIFICADO) ===== */
 h2 {
-  font-size: clamp(14px, 2.2vw, 18px);
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 clamp(10px, 2vw, 14px);
-  display: flex; align-items: center; gap: 8px;
-  font-weight: 600;
+  /* Fuente MODIFICADA: Montserrat */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  text-transform: none; /* Más limpio, menos "gritón" */
+  color: var(--primary);
+  margin: 0 0 1rem;
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 700;
 }
 
+/* Decorador de título simplificado */
 h2::before {
   content: '';
-  width: 8px; height: 8px; border-radius: 2px;
-  background: linear-gradient(120deg, var(--accent-1), var(--accent-2));
+  width: 6px; height: 20px; border-radius: 3px;
+  background: var(--accent-1);
   display: inline-block; flex-shrink: 0;
 }
 
 h3 {
-  margin: 0;
-  font-size: clamp(14px, 2vw, 16px);
+  /* Fuente MODIFICADA: Montserrat */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  color: var(--text);
+  margin: 0;
+  font-size: 18px;
+  color: var(--primary);
 }
 
 .meta {
   color: var(--muted);
-  font-size: clamp(12px, 1.6vw, 14px);
+  font-size: 15px;
   margin-top: 4px;
 }
 
-/* ===== ITEMS / TIMELINE ===== */
-.items { display: grid; gap: clamp(12px, 2vw, 14px); }
+/* ===== ITEMS / TIMELINE (MODIFICADO) ===== */
+.items { display: grid; gap: 1.5rem; } /* Más espacio */
 
-.item { position: relative; padding-left: clamp(18px, 4vw, 24px); }
+.item { position: relative; padding-left: 28px; }
 
+/* Timeline simplificada */
 .item:before {
   content: '';
-  position: absolute; left: 6px; top: 6px;
-  width: 8px; height: 8px; border-radius: 50%;
-  background: linear-gradient(120deg, var(--accent-2), var(--accent-3));
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent-2), transparent 80%);
+  position: absolute; left: 4px; top: 6px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent-1);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-1), transparent 85%);
   transition: var(--transition);
 }
 
 .item:hover:before {
-  width: 12px; height: 12px; left: 4px;
-  box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-2), transparent 70%);
+  transform: scale(1.1);
+  box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent-1), transparent 80%);
 }
 
 .item:after {
   content: '';
-  position: absolute; left: 9px; top: 20px; bottom: -14px;
+  position: absolute; left: 9px; top: 24px; bottom: -1.5rem;
   width: 2px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--accent-2), transparent 80%),
-    color-mix(in oklab, var(--accent-3), transparent 80%)
-  );
+  background: var(--line);
   transition: var(--transition);
 }
 
 .item:hover:after {
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--accent-2), transparent 60%),
-    color-mix(in oklab, var(--accent-3), transparent 60%)
-  );
+  background: var(--accent-1);
 }
 
 .item:last-child:after { display: none; }
 
 .item ul {
-  margin: 8px 0 0;
-  padding-left: clamp(16px, 3vw, 20px);
+  margin: 10px 0 0;
+  padding-left: 20px;
   list-style: disc;
   color: var(--muted);
-  font-size: clamp(13px, 1.8vw, 14px);
+  font-size: 16px;
   line-height: 1.7;
 }
 
 .item li { margin: 6px 0; }
 
-/* ===== CHIPS ===== */
-.chips { display: flex; flex-wrap: wrap; gap: clamp(6px, 1.5vw, 8px); }
+/* ===== CHIPS (MODIFICADO) ===== */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .chip {
-  background:
-    linear-gradient(180deg,
-      color-mix(in oklab, var(--chip-bg), transparent 0%),
-      color-mix(in oklab, var(--chip-bg), transparent 0%)
-    ) padding-box,
-    linear-gradient(120deg,
-      rgba(124, 58, 237, 0.6),
-      rgba(37, 99, 235, 0.6),
-      rgba(6, 182, 212, 0.6)
-    ) border-box;
+  /* Estilo de chip limpio */
+  background: var(--chip-bg);
   color: var(--chip-text);
-  padding: clamp(5px, 1vw, 6px) clamp(9px, 2vw, 10px);
-  font-size: clamp(12px, 1.6vw, 13px);
-  border-radius: 999px;
-  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
   transition: var(--transition);
   cursor: default;
+  font-weight: 700;
 }
 
 .chip:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.35);
-  filter: saturate(1.08);
+  transform: translateY(-2px);
+  border-color: var(--accent-1);
+  color: var(--primary);
+  box-shadow: var(--shadow);
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTONS (MODIFICADO) ===== */
 .btn {
   appearance: none;
   border: 1px solid var(--line);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--card), transparent 0%),
-    color-mix(in oklab, var(--card), transparent 0%)
-  );
-  color: var(--text);
-  border-radius: 12px;
-  padding: clamp(9px, 1.5vw, 10px) clamp(12px, 2.5vw, 14px);
-  font-weight: 600;
-  font-size: clamp(13px, 1.8vw, 14px);
+  background: var(--card);
+  color: var(--primary);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 15px;
   cursor: pointer;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn:hover,
 .btn:focus {
   transform: translateY(-2px);
-  border-color: var(--accent-2-light);
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
-  filter: saturate(1.05);
+  border-color: var(--accent-1);
+  box-shadow: var(--shadow);
+  color: var(--accent-1);
 }
+
+/* Botón de pie de página principal */
+footer .btn:first-of-type {
+  background: var(--accent-1);
+  border-color: var(--accent-1);
+  color: #FFFFFF;
+}
+footer .btn:first-of-type:hover {
+  background: var(--accent-2-light);
+  border-color: var(--accent-2-light);
+  color: #FFFFFF;
+}
+
 
 .btn:active { transform: translateY(0); }
 .btn.active { animation: pulse 0.3s ease-out; }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
-  100% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent-1), transparent 50%); }
+  100% { box-shadow: 0 0 0 10px color-mix(in oklab, var(--accent-1), transparent 100%); }
 }
 
 /* ===== FOOTER ===== */
 footer {
-  margin-top: clamp(16px, 3vw, 24px);
+  margin-top: var(--gap);
   display: flex;
-  gap: clamp(8px, 1.5vw, 12px);
+  gap: 12px;
   flex-wrap: wrap;
   align-items: center;
 }
 
-/* ===== ANIMATIONS ===== */
+/* ===== ANIMATIONS (Sin cambios, tu 'animations.css' funciona) ===== */
 .reveal {
   opacity: 0;
   transform: translateY(14px) scale(0.985);
@@ -442,34 +428,30 @@ footer {
   to   { opacity: 1; transform: translateY(0)    scale(1); }
 }
 
-/* ===== ACCESSIBILITY ===== */
+/* ===== ACCESSIBILITY (Sin cambios) ===== */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
   .reveal, .reveal.visible, .chip, .links a, .btn { transform: none !important; }
 }
 
-/* ===== FOCUS STATES ===== */
+/* ===== FOCUS STATES (MODIFICADO) ===== */
 .links a:focus-visible,
-.btn:focus-visible {
-  outline: 2px solid var(--accent-2);
+.btn:focus-visible,
+.chip:focus-visible {
+  outline: 3px solid var(--accent-1);
   outline-offset: 2px;
 }
 
 
-/* ===== PRINT (bloque único y optimizado) ===== */
+/* ===== PRINT (Sin cambios, tus estilos de impresión ya eran excelentes) ===== */
 @media print {
-  /* Colores reales y base limpia */
   html, body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     background: #fff !important;
     color: #000 !important;
   }
-
-  /* Layout de impresión en una sola columna */
   .grid { display: block !important; }
-
-  /* Quita sombras, bordes decorativos y fondos para un PDF limpio */
   .card, header, main, aside, section, footer {
     width: 100% !important;
     max-width: 100% !important;
@@ -477,8 +459,6 @@ footer {
     border: none !important;
     box-shadow: none !important;
   }
-
-  /* Cabecera no pegajosa */
   header {
     position: static !important;
     background: transparent !important;
@@ -488,47 +468,34 @@ footer {
     padding: 0 0 16px 0 !important;
     margin-bottom: 16px !important;
   }
-
-  /* ---------- TITULAR (nombre) visible en PDF ---------- */
-  /* Fuerza relleno sólido (soluciona el degradado invisible) */
+  /* MODIFICADO: Ahora .name SÍ se imprime bien por defecto, 
+     pero .name-print sigue siendo una buena práctica */
   .name {
+    color: #000 !important;
     background: none !important;
     -webkit-background-clip: initial !important;
     background-clip: initial !important;
-    -webkit-text-fill-color: #000 !important; /* clave en Android/iOS */
-    -webkit-text-stroke: 0 !important;
-    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
     text-shadow: none !important;
     filter: none !important;
-    opacity: 1 !important;
-    animation: none !important;
   }
-
-  /* (Opcional) Si usas una segunda línea sólo-impresión: 
-     Deja .name-print en HTML (duplicado del texto) y asígnale estilo aquí */
   .name-print {
     display: block !important;
     margin: 0 0 6px 0 !important;
-    font-size: 32px !important;   /* ajusta si quieres */
+    font-size: 32px !important;
     line-height: 1.15 !important;
     font-weight: 800 !important;
     color: #000 !important;
   }
-
-  /* Animaciones y transforms fuera (evita saltos en móvil) */
   .reveal {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
   }
-
-  /* Evita cortes feos entre tarjetas y títulos */
   .card, section, article, header, h1, h2, h3 {
     break-inside: avoid;
     page-break-inside: avoid;
   }
-
-  /* Cabecera prolija en PDF */
   .avatar {
     float: none !important;
     margin: 0 auto 12px auto !important;
@@ -538,32 +505,28 @@ footer {
     text-align: center !important;
     justify-content: center !important;
   }
-
-  /* Oculta controles/UI en el PDF */
   .btn, .theme, #printBtn, #downloadPdfBtn {
     display: none !important;
   }
-
-  /* Márgenes de página (ajusta a tu gusto) */
   @page {
     margin: 12mm;
     size: auto;
   }
-
-  /* Fondo decorativo fuera del PDF */
   .wrap::before { display: none !important; }
 }
 
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* ===== RESPONSIVE (MODIFICADO) ===== */
 @media (max-width: 640px) {
-  .wrap { padding: clamp(12px, 3vw, 16px); }
+  .wrap { padding: 16px; }
+
+  body { font-size: 16px; }
 
   header {
     grid-template-columns: 1fr;
     gap: 12px;
     margin-bottom: 16px;
-    padding: 8px 12px;
+    padding: 8px 0;
   }
 
   .header-left { grid-template-columns: 1fr; gap: 12px; }
@@ -572,10 +535,50 @@ footer {
   .top { text-align: center; }
   .links { justify-content: center; }
 
+  /* Botón de tema movido al header en móvil */
   .btn.theme {
-    position: fixed;
-    bottom: 20px; right: 20px;
-    z-index: 99;
-    box-shadow: var(--shadow);
+    position: absolute; /* Relativo al header */
+    top: 16px;
+    right: 0px;
+    box-shadow: none;
+    width: 40px;
+    height: 40px;
   }
+}
+
+/* ===== ESTILOS PARA ICONOS SVG (AÑADIR AL FINAL) ===== */
+
+/* Esto apunta al tag <i> que le dijimos a Feather que reemplace.
+  Le damos un tamaño y color por defecto.
+*/
+.links a i {
+  /* Tamaño del icono */
+  width: 16px;
+  height: 16px;
+  /* Espaciado entre icono y texto */
+  margin-right: 6px; 
+  /* Hereda el color del enlace (var(--muted)) */
+  color: inherit;
+  /* Asegura alineación vertical perfecta con el texto */
+  vertical-align: middle;
+  /* Baja el icono 1px para que se alinee mejor con el texto 'Lato' */
+  position: relative;
+  top: -1px;
+}
+
+/* Esto apunta al SVG que Feather crea DENTRO del tag <i>.
+  Es importante para que el SVG herede el color correctamente.
+*/
+.links a svg {
+  /* Hereda el tamaño del contenedor <i> */
+  width: 100%;
+  height: 100%;
+  /* Hereda el color (stroke) del contenedor <i> */
+  stroke: currentColor;
+}
+
+/* Estilo especial para el botón de PDF, para que el icono sea blanco
+*/
+.links a#downloadPdfBtn i {
+  color: #FFFFFF;
 }
