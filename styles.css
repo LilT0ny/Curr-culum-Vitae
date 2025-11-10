@@ -205,18 +205,6 @@ header.scrolled {
   color: var(--accent-1);
 }
 
-.btn.theme::before {
-  content: '🌙';
-  position: absolute;
-  opacity: 1;
-  transition: var(--transition);
-  transform: rotate(0deg) scale(1);
-}
-
-.btn.theme.theme-dark::before {
-  content: '☀️';
-  transform: rotate(180deg) scale(1);
-}
 
 /* ===== GRID (Sin cambios, ya era perfecto) ===== */
 .grid { display: grid; gap: var(--gap); }
@@ -581,4 +569,118 @@ footer {
 */
 .links a#downloadPdfBtn i {
   color: #FFFFFF;
+}
+
+
+/* ===== ESTILOS PARA BOTONES DE HEADER (AÑADIR) ===== */
+
+/* Contenedor para los botones de idioma y tema */
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Estilo para el botón de idioma, igual al de tema */
+.btn#langToggle {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px; /* Un poco más pequeño para "EN" / "ES" */
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+}
+.btn#langToggle:hover {
+  border-color: var(--accent-1);
+  color: var(--accent-1);
+}
+
+/* Ajuste para que los botones de header no estén pegajosos en móvil */
+@media (max-width: 640px) {
+  .header-buttons {
+    /* Mueve los botones a la esquina superior */
+    position: absolute;
+    top: 16px;
+    right: 0px;
+    gap: 8px;
+  }
+  
+  .btn.theme,
+  .btn#langToggle {
+    position: static; /* Quita el 'fixed' que tenía .btn.theme */
+    box-shadow: none;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ===== ESTILOS PARA ICONOS SVG DEL BOTÓN DE TEMA ===== */
+
+/* 1. Contenedor (el propio botón) */
+.btn.theme {
+  /* Asegura que los iconos se queden dentro */
+  position: relative; 
+  /* Oculta los iconos mientras giran para entrar/salir */
+  overflow: hidden; 
+}
+
+/* 2. Estilo base para AMBOS iconos (sol y luna) */
+.btn.theme .theme-icon {
+  /* Coloca los iconos en el centro exacto del botón */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  /* Hereda el color del botón (var(--muted)) */
+  color: inherit; 
+  
+  /* Transición suave para opacidad y transformación */
+  transition: var(--transition);
+
+  /* Ajusta el tamaño del icono SVG que Feather crea */
+  width: 20px;
+  height: 20px;
+}
+.btn.theme .theme-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+}
+
+
+/* 3. ESTADO CLARO (POR DEFECTO) */
+
+/* El sol (sun) está oculto: rotado y transparente */
+.btn.theme .theme-icon.sun {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-180deg) scale(0.5);
+}
+
+/* La luna (moon) está visible: centrada y opaca */
+.btn.theme .theme-icon.moon {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+}
+
+
+/* 4. ESTADO OSCURO (cuando el botón tiene la clase .theme-dark) */
+
+/* El sol (sun) ahora está visible */
+.btn.theme.theme-dark .theme-icon.sun {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+}
+
+/* La luna (moon) ahora está oculta */
+.btn.theme.theme-dark .theme-icon.moon {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(180deg) scale(0.5);
 }

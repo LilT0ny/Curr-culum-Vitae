@@ -7,45 +7,27 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <meta
+      id="meta-description"
       name="description"
-      content="CV de Anthony Javier Gómez Niño — Estudiante de Ingeniería en Software y desarrollador frontend en Quito, Ecuador."
+      content="Cargando..."
     />
-    <meta
-      name="theme-color"
-      content="#7c3aed"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#4c1d95"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta name="msapplication-navbutton-color" content="#7c3aed" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-
-    <meta name="msapplication-TileColor" content="#7c3aed" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <!-- Removed browser-incompatible theme-color meta tags (not supported by Firefox/Opera). -->
+    <!-- Provide a web app manifest and MS tile color as cross-browser fallbacks. -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#007BFF" />
     <meta name="color-scheme" content="light dark" />
-
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://anjagoni.com/" />
-    <meta property="og:title" content="Anthony Javier Gómez Niño — CV" />
+    <meta property="og:title" id="og-title" content="Anthony Javier Gómez Niño — CV" />
     <meta
       property="og:description"
-      content="Estudiante de Ingeniería en Software enfocado en desarrollo frontend. Proyectos, experiencia, habilidades y contacto."
+      id="og-description"
+      content="Cargando..."
     />
     <meta
       property="og:image"
@@ -55,32 +37,21 @@
       property="og:image:alt"
       content="Foto de perfil de Anthony Javier Gómez Niño"
     />
-
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Anthony Javier Gómez Niño — CV" />
-    <meta
-      property="twitter:description"
-      content="Frontend Developer & Software Engineering Student"
-    />
-
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%237c3aed' width='100' height='100'/><text x='50' y='65' font-size='70' font-weight='bold' fill='white' text-anchor='middle'>AJ</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23007BFF' width='100' height='100'/><text x='50' y='65' font-size='70' font-weight='bold' fill='white' text-anchor='middle'>AJ</text></svg>"
     />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/profile.png" />
     <link rel="canonical" href="https://anjagoni.com/" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="animations.css" />
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -102,10 +73,9 @@
         "image": "https://anjagoni.com/assets/profile.png"
       }
     </script>
-
-    <title>Anthony Javier Gómez Niño — CV</title>
+    
+    <title data-lang-key="docTitle">Cargando...</title>
   </head>
-
   <body>
     <div class="wrap">
       <header class="card reveal" data-delay="0">
@@ -120,19 +90,14 @@
           />
           <div class="top">
             <h1 class="name">Anthony Javier Gómez Niño</h1>
-            <p class="title">
-              Estudiante de Ingeniería en Software · Desarrollador Frontend
-            </p>
-
+            <p class="title" data-lang-key="profileTitle">Cargando...</p>
+            
             <nav class="links" aria-label="Enlaces de contacto">
-              <a
-                href="mailto:anjagoni@gmail.com"
-                aria-label="Enviar correo electrónico"
-              >
+              <a href="mailto:anjagoni@gmail.com" data-lang-key="ariaEmail" aria-label="Cargando...">
                 <i data-feather="mail"></i>
                 anjagoni@gmail.com
               </a>
-              <a href="tel:+593978733414" aria-label="Llamar por teléfono">
+              <a href="tel:+593978733414" data-lang-key="ariaPhone" aria-label="Cargando...">
                 <i data-feather="phone"></i>
                 +593 978 733414
               </a>
@@ -140,7 +105,8 @@
                 href="https://www.linkedin.com/in/anjagoni"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Perfil de LinkedIn"
+                data-lang-key="ariaLinkedIn"
+                aria-label="Cargando..."
               >
                 <i data-feather="linkedin"></i>
                 LinkedIn
@@ -149,93 +115,83 @@
                 href="https://github.com/LilT0ny"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Perfil de GitHub"
+                data-lang-key="ariaGitHub"
+                aria-label="Cargando..."
               >
                 <i data-feather="github"></i>
                 GitHub
               </a>
               <a
-                href="#"
+                href="#" 
                 id="downloadPdfBtn"
                 class="btn"
                 role="button"
-                aria-label="Descargar CV en PDF"
+                data-lang-key="ariaPdfButton"
+                aria-label="Cargando..."
+                download
               >
                 <i data-feather="file-text"></i>
-                PDF
+                <span data-lang-key="pdfButtonText">...</span>
               </a>
             </nav>
           </div>
         </div>
 
-        <button
-          class="btn theme"
-          id="themeToggle"
-          aria-label="Cambiar tema"
-          aria-pressed="false"
-        ></button>
+        <div class="header-buttons">
+          <button
+            class="btn theme"
+            id="langToggle"
+            data-lang-key="ariaLangToggle"
+            aria-label="Cargando..."
+          >
+            ...
+          </button>
+          <button
+            class="btn theme"
+            id="themeToggle"
+            data-lang-key="themeToggleAria"
+            aria-label="Cargando..."
+            aria-pressed="false"
+            >
+            <i data-feather="sun" class="theme-icon sun"></i>
+            <i data-feather="moon" class="theme-icon moon"></i>
+          </button>
+        </div>
       </header>
 
       <main class="grid">
         <section class="card reveal" data-delay="100">
-          <h2>Experiencia</h2>
+          <h2 data-lang-key="sectionExperience">Cargando...</h2>
           <div class="items">
             <article class="item reveal" data-delay="200">
-              <h3>
-                Pasante Frontend — Oficina de Asuntos Académicos, Escuela
-                Politécnica Nacional (EPN)
-              </h3>
-              <p class="meta">2025 – Presente · Quito, Ecuador</p>
+              <h3 data-lang-key="exp1Title">Cargando...</h3>
+              <p class="meta" data-lang-key="exp1Meta">Cargando...</p>
               <ul>
-                <li>
-                  Desarrollé componentes Angular (templates, estilos, layouts
-                  responsivos) alineados con el sistema de diseño institucional.
-                </li>
-                <li>
-                  Personalicé temas secundarios de WordPress; creé páginas y
-                  landing pages; mejoré bases de CSS/HTML.
-                </li>
-                <li>
-                  Traduje wireframes de Figma a interfaces accesibles
-                  (semántica, contraste, jerarquía).
-                </li>
-                <li>
-                  Documenté criterios de aceptación; control de versiones con
-                  Git/GitHub.
-                </li>
+                <li data-lang-key="exp1Li1">Cargando...</li>
+                <li data-lang-key="exp1Li2">Cargando...</li>
+                <li data-lang-key="exp1Li3">Cargando...</li>
+                <li data-lang-key="exp1Li4">Cargando...</li>
               </ul>
             </article>
 
             <article class="item reveal" data-delay="300">
-              <h3>
-                Desarrollador de Software — Proyectos Universitarios (Escuela
-                Politécnica Nacional)
-              </h3>
-              <p class="meta">Abr 2020 – Presente · Quito, Ecuador</p>
+              <h3 data-lang-key="exp2Title">Cargando...</h3>
+              <p class="meta" data-lang-key="exp2Meta">Cargando...</p>
               <ul>
-                <li>
-                  Lideré múltiples equipos estudiantiles para entregar
-                  proyectos académicos, resultando en los prototipos listados
-                  en la sección "Proyectos Destacados".
-                </li>
-                </ul>
+                <li data-lang-key="exp2Li1">Cargando...</li>
+              </ul>
             </article>
-            </div>
+          </div>
         </section>
 
         <aside class="card reveal" data-delay="150">
           <section>
-            <h2>Perfil</h2>
-            <p>
-              Estudiante de Ingeniería en Software enfocado en construir
-              interfaces limpias, accesibles y responsivas. Convierto requisitos
-              en experiencias centradas en el usuario, validando temprano con
-              stakeholders e iterando rápidamente.
-            </p>
+            <h2 data-lang-key="asideProfileTitle">Cargando...</h2>
+            <p data-lang-key="asideProfileContent">Cargando...</p>
           </section>
 
           <section>
-            <h2>Habilidades</h2>
+            <h2 data-lang-key="asideSkillsTitle">Cargando...</h2>
             <div class="chips" role="list">
               <span class="chip" role="listitem">Angular</span>
               <span class="chip" role="listitem">TypeScript</span>
@@ -258,83 +214,65 @@
           </section>
 
           <section>
-            <h2>Certificaciones</h2>
-            <p>
-              <strong>Introducción al Análisis de Datos con Python</strong> —
-              Alison (2023)
+            <h2 data-lang-key="asideCertsTitle">Cargando...</h2>
+            <p data-lang-key="asideCertsContent" data-lang-type="innerHTML">
+              Cargando...
             </p>
           </section>
 
           <section>
-            <h2>Idiomas</h2>
-            <p>Español (Nativo) · Inglés (Intermedio)</p>
+            <h2 data-lang-key="asideLangsTitle">Cargando...</h2>
+            <p data-lang-key="asideLangsContent">Cargando...</p>
           </section>
         </aside>
 
         <section class="card reveal" data-delay="200">
-          <h2>Proyectos Destacados</h2>
+          <h2 data-lang-key="projectsTitle">Cargando...</h2>
           <div class="items">
             <article class="item reveal" data-delay="250">
-              <h3>Sistema de Laboratorio Clínico</h3>
-              <p class="meta">
-                Interfaz para registro de pruebas y reporte de resultados
-              </p>
+              <h3 data-lang-key="proj1Title">Cargando...</h3>
+              <p class="meta" data-lang-key="proj1Meta">Cargando...</p>
               <ul>
-                <li>
-                  Formularios accesibles con validaciones y jerarquía clara de
-                  información.
-                </li>
-                <li>
-                  Enfoque en usabilidad para vistas de entrada de datos y
-                  reporte.
-                </li>
+                <li data-lang-key="proj1Li1">Cargando...</li>
+                <li data-lang-key="proj1Li2">Cargando...</li>
               </ul>
             </article>
 
             <article class="item reveal delay-300">
-              <h3>Web "Chauchera"</h3>
-              <p class="meta">Rastreador de gastos personales ligero</p>
+              <h3 data-lang-key="proj2Title">Cargando...</h3>
+              <p class="meta" data-lang-key="proj2Meta">Cargando...</p>
               <ul>
-                <li>
-                  Interfaz limpia para vistas rápidas de saldo y categorías.
-                </li>
+                <li data-lang-key="proj2Li1">Cargando...</li>
               </ul>
             </article>
 
             <article class="item reveal delay-350">
-              <h3>Billetera de Criptomonedas (Prototipo Académico)</h3>
-              <p class="meta">Interfaz de saldos y transacciones</p>
+              <h3 data-lang-key="proj3Title">Cargando...</h3>
+              <p class="meta" data-lang-key="proj3Meta">Cargando...</p>
               <ul>
-                <li>
-                  Panel simple y legible con estados de estado y vistas vacías.
-                </li>
+                <li data-lang-key="proj3Li1">Cargando...</li>
               </ul>
             </article>
           </div>
         </section>
 
         <section class="card reveal" data-delay="250">
-          <h2>Educación</h2>
+          <h2 data-lang-key="eduTitle">Cargando...</h2>
           <div class="items">
             <article class="item reveal" data-delay="300">
-              <h3>
-                B.S. en Ingeniería en Software — Escuela Politécnica Nacional
-              </h3>
-              <p class="meta">2021 – Presente · Quito, Ecuador</p>
+              <h3 data-lang-key="edu1Title">Cargando...</h3>
+              <p class="meta" data-lang-key="edu1Meta">Cargando...</p>
             </article>
 
             <article class="item reveal" data-delay="350">
-              <h3>
-                Diploma de Educación Media en Ciencias — Institución Educativa
-                "Pomasqui"
-              </h3>
-              <p class="meta">2021</p>
+              <h3 data-lang-key="edu2Title">Cargando...</h3>
+              <p class="meta" data-lang-key="edu2Meta">Cargando...</p>
             </article>
           </div>
         </section>
 
         <section class="card reveal" data-delay="300">
-          <h2>Referencias</h2>
+          <h2 data-lang-key="refsTitle">Cargando...</h2>
           <ul class="references-list">
             <li>
               <strong>Víctor Martinez</strong> — Senior Software Engineer, Mastercard
@@ -360,32 +298,35 @@
       </main>
 
       <footer class="reveal" data-delay="350">
-        <button
+        <a
           class="btn"
           id="printBtn"
-          aria-label="Imprimir o guardar como PDF"
+          href="#"
+          data-lang-key="ariaFooterPdf"
+          aria-label="Cargando..."
+          download
         >
-          <span aria-hidden="true">🖨</span>
-          Imprimir / Guardar como PDF
-        </button>
+          <i data-feather="download"></i>
+          <span data-lang-key="footerPdfText">Cargando...</span>
+        </a>
         <a
           class="btn"
           href="https://github.com/LilT0ny"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Ver más proyectos en GitHub"
+          data-lang-key="ariaFooterGithub"
+          aria-label="Cargando..."
         >
-          <span aria-hidden="true">🔗</span>
-          Más en GitHub
+          <i data-feather="github"></i>
+          <span data-lang-key="footerGithubText">Cargando...</span>
         </a>
       </footer>
     </div>
 
     <script src="main.js" defer></script>
-
     <script src="https://unpkg.com/feather-icons"></script>
     <script>
-      feather.replace();
-    </script> 
+      // Dejamos que main.js llame a feather.replace() después de cargar el idioma
+    </script>
   </body>
 </html>
